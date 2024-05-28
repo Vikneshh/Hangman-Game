@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman game</title>
+    <link rel="stylesheet" href="hangman.css">
+</head>
+<body>
+
+    <h1>Hangman</h1>
+    <p>Find the hidden word- Enter a letter </p>
+    <div class="game-container">
+        <svg class="figure-container" height="250" width="200">
+            <!-- Creating rod through the svg's -->
+            <line x1="60" y1="20" x2="140" y2="20"/>
+            <line x1="140"x2="140" y1="20" y2="70"/>
+            <line x1="60" x2="60" y1="20" y2="240"/>
+            <line x1="20" x2="100" y1="240" y2="240"/>
+
+            <!-- Now we are gonna create the head of the man-->
+
+            <circle cx="140" cy="90" r="20" class="figure-part"/>
+
+            <!-- Now body -->
+            <line x1="140" x2="140" y1="110" y2="170" class="figure-part" />
+            <!-- Arms  -->
+
+            <!-- left -->
+            <line x1="140" x2="110" y1="135" y2="120" class="figure-part"/>
+
+            <!-- right -->
+            <line x1="140" x2="170" y1="135" y2="120" class="figure-part"/>
+
+            <!-- Legs -->
+
+            <!-- right -->
+            <line x1="140" x2="170" y1="170" y2="200" class="figure-part"/>
+            
+            <!-- left -->
+            <line x1="140" x2="110" y1="170" y2="200" class="figure-part"/>
+
+        </svg>
+        <!-- We are hardcoding the innerhtml but remember they are gonna be dynamic with user interactions  -->
+        <!-- Hardcoding just to see them and style them -->
+        <div class="wrong-letters-container">
+            <div id="wrong-letters"></div>
+        </div>
+        <div class="word" id="word"></div>
+    </div>
+
+    <!-- Container for the final message and remember its gonna be a popup -->
+    <div class="popup-container" id="popup-container">
+        <div class="popup">
+            <h2 id="final-message"></h2>
+            <button id="play-button">Play Again</button>
+        </div>
+    </div>
+
+    <!-- Notifications sliding from bottom -->
+
+    <div class="notification-container " id="notification-container">
+        <p>You have already Entered this letter</p>
+    </div>
+    
+    <script src="hangman.js"></script>
+</body>
+</html>
